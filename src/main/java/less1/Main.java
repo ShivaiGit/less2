@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         gameWords();
+        //gameNumber();
     }
 
     static void gameNumber() {
@@ -45,14 +46,17 @@ public class Main {
 
         Random rdm = new Random();
         int index = rdm.nextInt(words.length);
-        System.out.println(words[index]);
+        //System.out.println(words[index]);
 
         Scanner scr = new Scanner(System.in);
-        System.out.println("Угадайте слова из списка");
+        System.out.println("Угадайте слова из списка - ");
         String userWords = scr.nextLine();
-        System.out.println(userWords);
+
+        while (!words[index].equals(userWords)) {
+            System.out.println("Не угадали. Повторите ещё раз");
+            userWords = scr.nextLine();
+        }
+        System.out.println("Угадали!");
+
     }
 }
-
-
-
