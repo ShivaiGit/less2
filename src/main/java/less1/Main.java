@@ -50,7 +50,7 @@ public class Main {
         Scanner scr = new Scanner(System.in);
         System.out.println("Угадайте слова из списка");
         String userWords = scr.nextLine();
-
+        System.out.println(userWords);
     }
 }
 
