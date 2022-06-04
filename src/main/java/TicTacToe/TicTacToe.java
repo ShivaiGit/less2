@@ -89,12 +89,11 @@ public class TicTacToe {
 
 
     private static void humanTurn() {
-        int lineNumber = scn.nextInt() - 1;
-        int columnNumber = scn.nextInt() - 1;
-        FIELD[lineNumber][columnNumber] = DOT_HUMAN;
+        int lineNumber;
+        int columnNumber;
     }
     private static void aiTurn() {
-        int lineNumber = rnd.nextInt();
-        int columnNumber = rnd.nextInt();
+        int lineNumber;
+        int columnNumber;
     }
 }
