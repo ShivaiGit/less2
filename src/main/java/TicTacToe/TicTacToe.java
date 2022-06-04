@@ -11,7 +11,7 @@ public class TicTacToe {
     static final char DOT_HUMAN = 'X';
     static final char DOT_AI = 'O';
 
-    static final char HEAD_FIRST_SYMBOL = '#';
+    static final char HEAD_FIRST_SYMBOL = ' ';
     static final String SPACE = " ";
 
     static final char[][] FIELD = new char[FIELD_SIZE][FIELD_SIZE];
@@ -29,6 +29,9 @@ public class TicTacToe {
 
         //печать поля в консоль
         printField();
+
+        //игра
+        playGame();
     }
 
 
@@ -70,5 +73,28 @@ public class TicTacToe {
             }
             System.out.println();
         }
+    }
+
+    private static void playGame() {
+
+        //ход человека
+        humanTurn();
+        //печать поля
+        printField();
+
+        //ход компьютера
+        aiTurn ();
+        //печать поля
+    }
+
+
+    private static void humanTurn() {
+        int lineNumber = scn.nextInt() - 1;
+        int columnNumber = scn.nextInt() - 1;
+        FIELD[lineNumber][columnNumber] = DOT_HUMAN;
+    }
+    private static void aiTurn() {
+        int lineNumber = rnd.nextInt();
+        int columnNumber = rnd.nextInt();
     }
 }
