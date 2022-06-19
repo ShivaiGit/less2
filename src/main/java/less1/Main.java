@@ -109,14 +109,19 @@ public class Main {
 
     static void randomArr() {
         int[] arr = new int[15];
-        for (int i = 0; i < arr.length; i++) {
+            for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 16);
         }
-        int[] arr1 = new int[arr.length * 2];
-        for (int i = 0; i < arr1.length; i++) {
 
-        }
+        int[] arr1 = new int[arr.length * 2];
+        System.arraycopy(arr,0,arr1,0,15);
+
+
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(arr1));
+
+
+
+
     }
 }
