@@ -1,22 +1,41 @@
 package less1;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        gameWords();
+        //gameWords();
         //gameNumber();
+        //arrOdd();
+        //arrInput();
+        randomArr();
     }
 
     static void gameNumber() {
-        int randomNumber = (int) (Math.random() * 20);
+        int range = 10;
+        int randomNumber = (int) (Math.random() * range);
         Scanner scr = new Scanner(System.in);
 
         int userNumber;
         int count = 0;
+
+//        while (true) {
+//            System.out.println("Угадайте цифру от 0 до " + range);
+//            userNumber = scr.nextInt();
+//            if (userNumber == randomNumber) {
+//                System.out.println("Вы Угадали");
+//                break;
+//            } else if (userNumber > randomNumber) {
+//                System.out.println("Введенная цифра больше загаданной.");
+//            } else {
+//                System.out.println("Введенная цифра меньше загаданной.");
+//            }
+//        }
+
         do {
-            System.out.println("Угадайте цифру от 0 до 20. У вас три попытки - ");
+            System.out.println("Угадайте цифру от 0 до 10. У вас три попытки - ");
             userNumber = scr.nextInt();
             if (userNumber < randomNumber) {
                 System.out.println("Введенная цифра меньше загаданной.");
@@ -50,7 +69,7 @@ public class Main {
 
         Scanner scr = new Scanner(System.in);
         System.out.println("Угадайте слова из списка - ");
-        String userWords = scr.nextLine();
+        String userWords = scr.nextLine().toLowerCase();
 
         while (!words[index].equals(userWords)) {
             System.out.println("Не угадали. Повторите ещё раз");
@@ -58,5 +77,46 @@ public class Main {
         }
         System.out.println("Угадали!");
 
+    }
+
+    static void arrOdd() {
+        int[] array = {0, 5, 2, 4, 7, 1, 3, 19};
+        int isOddNum = 0;
+        for (int i : array) {
+            if (i % 2 != 0)
+                isOddNum++;
+        }
+        System.out.println(isOddNum);
+    }
+
+    static void arrInput() {
+        final int SIZE;
+        int numberInput;
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Введите длину массива: ");
+        SIZE = scr.nextInt();
+
+        int[] arr = new int[SIZE];
+        System.out.println("Введите значение элементов массива: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Ведите значение " + (i + 1) + "-го элемента");
+            arr[i] = numberInput = scr.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
+
+    }
+
+    static void randomArr() {
+        int[] arr = new int[15];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 16);
+        }
+        int[] arr1 = new int[arr.length * 2];
+        for (int i = 0; i < arr1.length; i++) {
+
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr1));
     }
 }
