@@ -10,7 +10,7 @@ public class Main {
         //gameNumber();
         //arrOdd();
         //arrInput();
-        randomArr();
+        //randomArr();
     }
 
     static void gameNumber() {
@@ -115,10 +115,16 @@ public class Main {
 
         int[] arr1 = new int[arr.length * 2];
         System.arraycopy(arr,0,arr1,0,15);
+        int index = 0;
+        for (int i = 15; i < arr1.length; i++) {
+            arr1[i] = arr[index] * 2;
+            index++;
 
+        }
 
-        System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(arr1));
+        System.out.println("Массив arr - " + Arrays.toString(arr));
+        System.out.println();
+        System.out.println("Массив arr1 - " + Arrays.toString(arr1));
 
 
 
