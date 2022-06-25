@@ -3,11 +3,13 @@ package lessOOP;
 public class Main {
     public static void main(String[] args) {
 
-        Cat cat1 = new Cat("Барсик", "красный", 2);
-        Cat cat2 = new Cat("Мурзик", "белый", 1);
+        Car car1 = new Car("green", 2000, 1980);
 
-        System.out.println(cat2.color);
-        System.out.println(cat1.color);
+        Car car2 = new Car("red", 1500, 2020);
+
+        car1.print();
+        System.out.println();
+        car2.print();
 
     }
 }
