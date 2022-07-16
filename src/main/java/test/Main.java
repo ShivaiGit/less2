@@ -9,7 +9,7 @@ public class Main {
 
         for (int i = 1; i <= h; i++) {
             for (int j = 0; j <= h + 1; j++) {
-                if (i + j <= 4) {
+                if (i + j <= h) {
                     System.out.print(" ");
                 } else
                     System.out.print("*");
